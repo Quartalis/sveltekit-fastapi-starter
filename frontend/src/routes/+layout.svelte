@@ -49,6 +49,6 @@
 	</main>
 
 	<footer class="border-t border-[var(--border)] px-6 py-4 text-center text-[var(--text-secondary)] text-sm">
-		Built with SvelteKit + FastAPI Starter by <a href="https://quartalis.co.uk" class="text-[var(--accent)] hover:underline" target="_blank" rel="noopener">Quartalis</a>
+		Built with <a href="https://github.com/Quartalis/sveltekit-fastapi-starter" class="text-[var(--accent)] hover:underline" target="_blank" rel="noopener">SvelteKit + FastAPI Starter</a>
 	</footer>
 </div>

@@ -1,6 +1,6 @@
 """
 SvelteKit + FastAPI Starter — Backend
-Free edition by Quartalis (https://quartalis.co.uk)
+https://github.com/Quartalis/sveltekit-fastapi-starter
 """
 
 from datetime import datetime, timedelta, timezone
@@ -17,7 +17,7 @@ from config import settings
 
 app = FastAPI(
     title="SvelteKit + FastAPI Starter",
-    description="Free starter by Quartalis — upgrade at quartalis.co.uk/store",
+    description="SvelteKit 5 + FastAPI starter with JWT auth",
     version="1.0.0",
 )
 

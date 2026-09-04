@@ -2,35 +2,17 @@
 
 A production-ready starter template combining **SvelteKit 5** with **FastAPI**, featuring JWT authentication, a dark theme, and Docker deployment.
 
-Built and maintained by [Quartalis](https://quartalis.co.uk).
+Built and maintained by [Darren Betney](https://github.com/Quartalis).
 
 ---
 
-## What's Included (Free Edition)
+## What's Included
 
-| Feature | Free | Premium |
-|---------|:----:|:-------:|
-| SvelteKit 5 frontend | Yes | Yes |
-| FastAPI backend | Yes | Yes |
-| JWT login & registration | Yes | Yes |
-| Dark theme (Tailwind v4) | Yes | Yes |
-| Docker Compose deployment | Yes | Yes |
-| Stripe billing integration | - | Yes |
-| Admin dashboard | - | Yes |
-| Transactional email system | - | Yes |
-| Multi-tenancy | - | Yes |
-| Role-based access control (RBAC) | - | Yes |
-| Database migrations (Alembic) | - | Yes |
-| Production Nginx config | - | Yes |
-| Priority support | - | Yes |
-
----
-
-## Upgrade to Premium
-
-The **premium version** includes everything in the free edition plus Stripe billing, an admin dashboard, email system, multi-tenancy, RBAC, and production deployment configs.
-
-**[Get the Premium Starter at quartalis.co.uk/store](https://quartalis.co.uk/store/sveltekit-fastapi-starter)**
+- SvelteKit 5 frontend (TypeScript)
+- FastAPI backend
+- JWT login & registration
+- Dark theme (Tailwind v4)
+- Docker Compose deployment
 
 ---
 
@@ -133,11 +115,3 @@ All configuration is done via environment variables. See `.env.example` for avai
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## Links
-
-- [Quartalis](https://quartalis.co.uk) — Software & game development
-- [Premium Version](https://quartalis.co.uk/store/sveltekit-fastapi-starter) — Full-featured starter with Stripe, admin, email, multi-tenancy
-- [All Products](https://quartalis.co.uk/store) — Browse the full Quartalis store

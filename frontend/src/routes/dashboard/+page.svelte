@@ -37,20 +37,6 @@
 				</ul>
 			</div>
 
-			<div class="bg-[var(--bg-card)] border border-[var(--border)] rounded-xl p-6 md:col-span-2">
-				<h3 class="text-lg font-semibold mb-2">Need More Features?</h3>
-				<p class="text-[var(--text-secondary)] text-sm mb-4">
-					The premium version includes Stripe billing, admin dashboard, email system, multi-tenancy, and RBAC.
-				</p>
-				<a
-					href="https://quartalis.co.uk/store/sveltekit-fastapi-starter"
-					target="_blank"
-					rel="noopener"
-					class="inline-block bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
-				>
-					Upgrade to Premium
-				</a>
-			</div>
 		</div>
 	</div>
 {/if}
