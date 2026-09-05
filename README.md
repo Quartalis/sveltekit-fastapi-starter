@@ -1,5 +1,7 @@
 # SvelteKit 5 + FastAPI Starter
 
+[![CI](https://github.com/Quartalis/sveltekit-fastapi-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/Quartalis/sveltekit-fastapi-starter/actions/workflows/ci.yml)
+
 A production-ready starter template combining **SvelteKit 5** with **FastAPI**, featuring JWT authentication, a dark theme, and Docker deployment.
 
 Built and maintained by [Darren Betney](https://github.com/Quartalis).
@@ -13,6 +15,7 @@ Built and maintained by [Darren Betney](https://github.com/Quartalis).
 - JWT login & registration
 - Dark theme (Tailwind v4)
 - Docker Compose deployment
+- Backend test suite (pytest) + GitHub Actions CI
 
 ---
 
@@ -58,10 +61,16 @@ npm run dev
 
 ```
 sveltekit-fastapi-starter/
+├── .github/workflows/
+│   └── ci.yml               # Backend tests, frontend check+build, Docker builds
 ├── backend/
 │   ├── main.py              # FastAPI app with auth endpoints
 │   ├── config.py            # Environment-based configuration
+│   ├── tests/
+│   │   ├── conftest.py      # TestClient + clean user store per test
+│   │   └── test_api.py      # Health, register, login, /api/me, token edge cases
 │   ├── requirements.txt     # Python dependencies
+│   ├── requirements-dev.txt # + pytest, httpx
 │   └── Dockerfile
 ├── frontend/
 │   ├── src/
@@ -75,6 +84,7 @@ sveltekit-fastapi-starter/
 │   │       ├── register/
 │   │       └── dashboard/
 │   ├── package.json
+│   ├── package-lock.json
 │   └── Dockerfile
 ├── docker-compose.yml
 ├── .env.example
@@ -89,6 +99,29 @@ sveltekit-fastapi-starter/
 | POST | `/api/auth/register` | Register new user | No |
 | POST | `/api/auth/login` | Login (returns JWT) | No |
 | GET | `/api/me` | Get current user | Yes |
+
+---
+
+## Tests & CI
+
+**Backend** (15 tests: health, registration incl. duplicate/invalid input, login success/failure, `/api/me` with valid, missing, garbage, wrong-secret, expired and orphaned tokens):
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+python -m pytest -v tests
+```
+
+**Frontend** (type-check + production build):
+
+```bash
+cd frontend
+npm ci
+npm run check
+npm run build
+```
+
+GitHub Actions (`.github/workflows/ci.yml`) runs all of the above on every push and pull request — backend on Python 3.11 and 3.12, frontend on Node 20 — then builds both Docker images once those pass.
 
 ---
 

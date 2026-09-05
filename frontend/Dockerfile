@@ -2,8 +2,8 @@ FROM node:20-slim AS build
 
 WORKDIR /app
 
-COPY package.json ./
-RUN npm install
+COPY package.json package-lock.json ./
+RUN npm ci
 
 COPY . .
 RUN npm run build
@@ -12,8 +12,9 @@ FROM node:20-slim
 
 WORKDIR /app
 
+# adapter-node bundles every devDependency into build/, so the runtime image
+# needs no node_modules (add them back if you add runtime `dependencies`).
 COPY --from=build /app/build build/
-COPY --from=build /app/node_modules node_modules/
 COPY package.json .
 
 EXPOSE 3000
